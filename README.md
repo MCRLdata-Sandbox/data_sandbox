@@ -1,6 +1,6 @@
 # MCRLdata Sandbox
 
-Welcome to the MCRLdata sandbox! The [MCRLdata pipeline](https://mcrldata.pnnl.gov/) hosts and streams datasets collected by a wide range of environmental sensors located on the dock at Pacific Northwest National Laboratory's Sequim, WA campus, home to the Marine and Coastal Research Laboratory. This sandbox extends the functionality of the MCRLdata pipeline by 
+Welcome to the MCRLdata sandbox! The [MCRLdata pipeline](https://mcrldata.pnnl.gov/) hosts and streams datasets collected by a wide range of environmental sensors located on the dock at Pacific Northwest National Laboratory's Sequim, WA campus, home to the Marine and Coastal Research Laboratory. This sandbox extends the functionality of the MCRLdata pipeline by providing
 
   1) **Real-time access** to historic MCRLdata datasets
   2) **Custom visualizations and analyses** supporting cross-domain research
