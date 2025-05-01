@@ -16,3 +16,5 @@ If you want to pull data programmatically, go **here**
 If you're new to coding but want to learn, check out our tutorials **here**
 
 PR private notes: https://docs.google.com/document/d/1tXO-z3eQjqIRmyJPHZh_fS9__I04BJXTfCVrjMFlHZE/edit?tab=t.0
+
+Progress tracking: https://docs.google.com/document/d/1QdxCAVCirGWI2zWxxsvcHiCyO30AkpuWzAlInB3Ff7U/edit?tab=t.0
