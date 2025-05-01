@@ -9,6 +9,10 @@ Welcome to the MCRLdata sandbox! The [MCRLdata pipeline](https://mcrldata.pnnl.g
 
 <img src="https://github.com/peterregier/mcrl_data_sandbox/blob/main/figures/logos/sandbox_logo_1.png" alt="Alt Text" width="300" height="300">
 
+if you just want to download data, go **here**
 
+If you want to pull data programmatically, go **here**
+
+If you're new to coding but want to learn, check out our tutorials **here**
 
 PR private notes: https://docs.google.com/document/d/1tXO-z3eQjqIRmyJPHZh_fS9__I04BJXTfCVrjMFlHZE/edit?tab=t.0
