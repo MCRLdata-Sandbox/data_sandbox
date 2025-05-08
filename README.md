@@ -23,18 +23,23 @@ Progress tracking: https://docs.google.com/document/d/1QdxCAVCirGWI2zWxxsvcHiCyO
 
 # Wind Rose Plots
 
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div style="width: 50%;">
-    <img src="figures/wind_plots/annual.png" alt="Annual Wind Rose Plot" style="width: 100%;">
+# Wind Rose Plots
+
+<p align="left">
+  <img src="figures/wind_plots/annual.png" width="50%" alt="Annual Wind Rose Plot">
+</p>
+
+<div style="display: flex; justify-content: right;">
+  <div style="display: flex; flex-direction: column;">
+    <img src="figures/wind_plots/spring.png" width="25%" alt="Spring Wind Rose Plot">
+    <img src="figures/wind_plots/summer.png" width="25%" alt="Summer Wind Rose Plot">
   </div>
-  <div style="display: flex; flex-direction: column; width: 50%;">
-    <div style="display: flex;">
-      <img src="figures/wind_plots/spring.png" alt="Spring Wind Rose Plot" style="width: 50%;">
-      <img src="figures/wind_plots/summer.png" alt="Summer Wind Rose Plot" style="width: 50%;">
-    </div>
-    <div style="display: flex;">
-      <img src="figures/wind_plots/fall.png" alt="Fall Wind Rose Plot" style="width: 50%;">
-      <img src="figures/wind_plots/winter.png" alt="Winter Wind Rose Plot" style="width: 50%;">
-    </div>
+  <div style="display: flex; flex-direction: column;">
+    <img src="figures/wind_plots/fall.png" width="25%" alt="Fall Wind Rose Plot">
+    <img src="figures/wind_plots/winter.png" width="25%" alt="Winter Wind Rose Plot">
   </div>
 </div>
+
+
+
+
