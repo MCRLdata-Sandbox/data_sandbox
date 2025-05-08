@@ -18,3 +18,23 @@ If you're new to coding but want to learn, check out our tutorials **here**
 PR private notes: https://docs.google.com/document/d/1tXO-z3eQjqIRmyJPHZh_fS9__I04BJXTfCVrjMFlHZE/edit?tab=t.0
 
 Progress tracking: https://docs.google.com/document/d/1QdxCAVCirGWI2zWxxsvcHiCyO30AkpuWzAlInB3Ff7U/edit?tab=t.0
+
+
+
+# Wind Rose Plots
+
+<p align="center">
+  <img src="figures/wind_plots/annual.png" width="50%" alt="Annual Wind Rose Plot">
+</p>
+
+<div style="display: flex; justify-content: center;">
+  <div style="display: flex; flex-direction: column;">
+    <img src="figures/wind_plots/spring.png" width="25%" alt="Spring Wind Rose Plot">
+    <img src="figures/wind_plots/summer.png" width="25%" alt="Summer Wind Rose Plot">
+  </div>
+  <div style="display: flex; flex-direction: column;">
+    <img src="figures/wind_plots/fall.png" width="25%" alt="Fall Wind Rose Plot">
+    <img src="figures/wind_plots/winter.png" width="25%" alt="Winter Wind Rose Plot">
+  </div>
+</div>
+
