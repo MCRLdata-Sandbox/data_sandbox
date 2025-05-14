@@ -20,6 +20,7 @@ p_load(tidyverse, # tidy workflows
 ## Set ggplot theme
 theme_set(theme_bw())
 
+
 # 2. Read in data --------------------------------------------------------------
 
 ## 1. Read in tidal depth
