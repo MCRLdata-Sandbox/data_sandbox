@@ -12,7 +12,7 @@
 ## Set up environment
 source("scripts/0_setup.R")
 
-df <- read_csv("data/mcrl_data/250515_tidegauge_L1.csv") %>% 
+df <- read_csv("data/ready_to_use/L1/250515_tidegauge_L1.csv") %>% 
   assign_season()
 
 
@@ -92,15 +92,5 @@ ggsave("figures/250515_tide_example.png", width = 6, height = 4)
 
 
 ## Make some summary stats that present average HH, average LL, and seasonal ranges
-
-
-
-
-
-
-
-
-
-
 
 

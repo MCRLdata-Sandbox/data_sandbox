@@ -16,7 +16,7 @@ p_load(rtide, tictoc, VulnToolkit, plotly)
 # 2. Read in data --------------------------------------------------------------
 
 ## Read in data
-tide_raw <- read_csv("data/mcrl_data/MCRLdata_240501_250501_L0.csv") %>% 
+tide_raw <- read_csv("data/inputs/mcrl_data/MCRLdata_240501_250501_L0.csv") %>% 
   dplyr::select(time_pst, contains("water_level"))
 
 
@@ -56,7 +56,7 @@ ggplot(tide_clean_flags, aes(time_pst, water_level_m_navd88)) +
 #   dplyr::select(-station) %>% 
 #   rename("time_pst" = time_utc) # Labeled UTC, but tz set above
 #write_csv(rtide, "data/mcrl_data/250515_rtide_port_angeles.csv")
-rtide <- read_csv("data/mcrl_data/250515_rtide_port_angeles.csv")
+rtide <- read_csv("data/inputs/mcrl_data/250515_rtide_port_angeles.csv")
 
 ccf_check <- inner_join(rtide, tide_clean_flags) 
 
@@ -105,7 +105,5 @@ p1 <- ggplot(tide_final, aes(time_pst, water_level_m_navd88)) +
 
 ggplotly(p1)
 
-write_csv(tide_final, "data/mcrl_data/250515_tidegauge_L1.csv")
-
-
+write_csv(tide_final, "data/ready_to_use/L1/250515_tidegauge_L1.csv")
 

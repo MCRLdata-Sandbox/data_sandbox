@@ -13,8 +13,6 @@
 # 4 = too high
 # 8 = spike detection/non-real data
 
-## Access Key ID: AKIATW2JYZRGMAILEAME
-## Secrete Key: PwBtCRdEb/qtxAT9h/YlRGkTebAnBODbDtDKvaEdd
 
 # 0. Setup ---------------------------------------------------------------------
 
