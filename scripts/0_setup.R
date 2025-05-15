@@ -10,6 +10,8 @@ rm(list = ls())
 ## install.packages("pacman")
 require(pacman)
 p_load(tidyverse, # keep your data workflows tidy
+       ncdf4, # interact with netCDF files
+       parsedate, # robust handling of datetimes
        cowplot, # arrange multiple plots
        janitor,  # clean_names()
        hms) # as_hms()

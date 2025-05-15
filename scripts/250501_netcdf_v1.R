@@ -16,23 +16,20 @@
 
 # 0. Setup ---------------------------------------------------------------------
 
-require(pacman)
-
-p_load(tidyverse, 
-       lubridate,
-       parsedate,
-       ncdf4)
-
-theme_set(theme_bw())
+## Set up environment
+source("scripts/0_setup.R")
 
 
-# 1. Manually read in a netCDF file --------------------------------------------
+# 1. Read in tide gauge data for comparison ------------------------------------
 
-## Can tell from the name this is tide gauge from 8/1/2023
+tide_athena <- read_csv("data/ready_to_use/L1/250515_tidegauge_L1.csv")
+
+
+# 2. Manually read in a tide gauge dataset -------------------------------------
 
 ## Reads it in, not a normal file structure I'm used to looking at...
 ## Pretty opaque as an R object
-tide_nc <- nc_open("data/mcrl_data/netcdf/test/tide_gauge.mcrl_pier-ysi_nile_1-5min.a1.20230801.nc")
+tide_nc <- nc_open("data/inputs/mcrl_data/netcdf/test/tide_gauge.mcrl_pier-ysi_nile_1-5min.a1.20230801.nc")
 
 ## This is what chat told me to do for pulling which variables are in the file
 variable_names <- sapply(tide_nc$var, function(x) x$name)
@@ -40,62 +37,49 @@ variable_names <- sapply(tide_nc$var, function(x) x$name)
 ## We know the file is not in GMT, because that's baked in: 
 tide_nc$is_GMT
 
+## We really want to pull three things: 1) time, 2) water level, 3) any extra QC
 
-ncatt_get(tide_nc, 0)
+## Time - this gets us time, but not in a usable unit, cause it's nanoseconds since 
+## a specific time, that's buried elsewhere
+raw_times <- ncvar_get(tide_nc, "time")
 
-time_dim <- tide_nc$var$water_level$dim[[1]]
+## This isn't very dynamic, but at least gets us the units
+tide_nc$var$water_level$dim[[1]]$units
 
-time_units <- time_dim$units
+## Let's see if we can conver that to something usable
+## str_remove scrubs text, parse_date converts to POSIXct - NOTE TZ is UTC!!!! 
+## Above says that's wrong, though unclear what timezone actually is at this point
+origin <- parsedate::parse_date(str_remove(tide_nc$var$water_level$dim[[1]]$units, "nanoseconds since "))
 
-variable_names[1]
+## Now we're getting somewhere, here are times
+times <- tibble(raw_times_ns = raw_times) %>% 
+  mutate(raw_times_s = raw_times_ns / 1e+9) %>% 
+  mutate(time_pst = round_date(origin + seconds(raw_times_s), unit = "5 min"))
 
-## 
-ncvar_get(tide_nc, "water_level")
+## water level
+df <- times %>% 
+  mutate(water_level_m_navd88 = ncvar_get(tide_nc, "water_level"), 
+         water_level_qc = ncvar_get(tide_nc, "qc_water_level"), 
+         water_level_smooth = ncvar_get(tide_nc, "water_level_smooth")) %>% 
+  mutate(is_smooth = ifelse(abs(water_level_m_navd88 - water_level_smooth) < 0.01, "no", "smoothed"))
 
-ncvar_get(tide_nc, "qc_water_level")
 
-ncvar_get(tide_nc, "water_level_smooth")
+# 3. Compare to see if we have things lined up ---------------------------------
 
-df <- tibble(time_raw = ncvar_get(tide_nc, "time"), 
-             wl_m = ncvar_get(tide_nc, "water_level"), 
-             wl_q = ncvar_get(tide_nc, "qc_water_level"), 
-             wl_smooth = ncvar_get(tide_nc, "water_level_smooth")) %>% 
-  mutate(index = 1:n())
-
-ggplot(df, aes(wl_m, wl_smooth)) + 
+## This looks right, which is lovely! It also looks like these data would be PDT,
+## but are potentially kept in PST
+tide_athena %>% 
+  filter(as_date(time_pst) == "2023-08-01") %>% 
+  full_join(df, by = c("time_pst" = "time_pst")) %>% 
+  ggplot(aes(water_level_m_navd88.x, water_level_m_navd88.y)) + 
   geom_point()
 
 
-df %>% 
-  mutate(datetime = parsedate::parse_date(time_raw))
+# 4. Time to figure out how to pull QC -----------------------------------------
 
-
-
-### We are now going to try and match Athena's CSV data to netCDF to reverse-engineer
-### how to get information like time-zone right
-
-rm(list = ls())
-
-## First, read in one netCDF
-
-nc1 <- nc_open("data/mcrl_data/netcdf/test/tide_gauge.mcrl_pier-ysi_nile_1-5min.a1.20250102.nc")
-
-ncdf4::ncatt_get(nc1)
-
-time <- ncvar_get(nc1, "time")
-tunits <- ncatt_get(nc1,"time","units")
-
-df <- tibble(time = ncvar_get(nc1, "time"), 
-             wl_m = ncvar_get(nc1, "water_level"), 
-             wl_q = ncvar_get(nc1, "qc_water_level")) %>% 
-  mutate(index = 1:n()) %>% 
-  mutate(datetime = round_date(as_datetime(time)), unit = "5 min")
-
-
-
-
-
-
+ggplot(df, aes(time_pst, water_level_m_navd88)) + 
+  geom_line() + 
+  geom_point(data = df %>% filter(is_smooth == "smoothed"))
 
 
 
