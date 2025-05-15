@@ -23,7 +23,7 @@ theme_set(theme_bw())
 assign_season <- function(data){
   data %>% 
     mutate(date = as_date(time_pst)) %>% 
-    mutate(month = month(date)) %>% 
+    mutate(month = month(date, label = T)) %>% 
     mutate(season = case_when(month %in% c(3, 4, 5) ~ "1. Spring", 
                               month %in% c(6, 7, 8) ~ "2. Summer", 
                               month %in% c(9, 10, 11) ~ "3. Fall", 
