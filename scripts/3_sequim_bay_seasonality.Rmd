@@ -2,7 +2,7 @@
 title: "Sequim Bay seasonal summary"
 author: "PR"
 date: "2025-05-15"
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
