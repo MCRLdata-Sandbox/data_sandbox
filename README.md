@@ -7,7 +7,7 @@ The [MCRLdata pipeline](https://mcrldata.pnnl.gov/) hosts and streams datasets c
   3) **Simple, modular tools** for users to create their own visualization or analysis tools
   4) **Training guides** to bring new users up to speed. 
 
-If this is your first time here, and you have questions about the whys, whats, and hows, please start with the **sandbox_intro**
+🏖️ If this is your first time here, and you have questions about the whys, whats, and hows, please start with the **sandbox_intro**
 
 If you want a simple summary of seasonal Sequim Bay conditions off the dock (geared towards boating ops), check out the **[Sequim Bay seasonal summary](https://github.com/peterregier/mcrl_data_sandbox/blob/main/scripts/3_sequim_bay_seasonality.md)**
 
