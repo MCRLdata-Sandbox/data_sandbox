@@ -9,7 +9,7 @@ The [MCRLdata pipeline](https://mcrldata.pnnl.gov/) hosts and streams datasets c
 
 🏖️ If this is your first time here, and you have questions about the whys, whats, and hows, please start with the **sandbox_intro**
 
-⛴️ If you want a simple summary of seasonal Sequim Bay conditions off the dock (geared towards boating ops), check out the **[Sequim Bay seasonal summary](https://github.com/peterregier/mcrl_data_sandbox/blob/main/scripts/3_sequim_bay_seasonality.md)**
+⛴️ If you want a simple summary of seasonal Sequim Bay conditions off the dock, check out the **[Sequim Bay seasonal summary](https://github.com/peterregier/mcrl_data_sandbox/blob/main/scripts/3_sequim_bay_seasonality.md)**
 
 💾 If you want to download MCRLdata datasets currently available on the sandbox, please visit **mcrl_data**
 
