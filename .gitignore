@@ -53,3 +53,5 @@ rsconnect/
 data/mcrl_data/athena/*
 
 */archive/*
+
+data/mcrl_data/MCRLdata*
