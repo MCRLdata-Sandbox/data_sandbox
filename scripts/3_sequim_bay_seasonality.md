@@ -7,8 +7,8 @@ PR
 
 The datasets collected by the MCRLdata pipeline comprise a comprehensive
 suite of aquatic and meterological datasets that are useful across the
-MCRL mission space. This markdown provides a brief summary of seasonal
-patterns for a range of parameters deemed of most use to boating ops,
+MCRL mission space. **This markdown provides a brief summary of seasonal
+patterns for a range of parameters deemed of most use to boating ops**,
 but also of potential use to various research activities. This content
 is targeted to folks familiar with the system, but with just enough
 detail that folks not familiar will hopefully understand.
@@ -22,9 +22,9 @@ tides, though this varies considerably between spring spring tides.
 
 Seasonally, high tides generally occur between noon and the early
 afternoon in Jan-April, and generally get earlier, occuring near
-midnight in September. \*Note that all times are in PST, and do not
-account for daylight savings. Low tides are generally occure in the
-afternoon / early evening in the summer.
+midnight in September. Low tides are generally occur in the afternoon /
+early evening in the summer (*Note that all times are in PST, and do not
+account for daylight savings*).
 
 ![](../figures/tidal_depth_by_month_and_tod.png)
 
@@ -42,29 +42,15 @@ S/SE followed by NW/N/NE.
 
 ## Seasonal Wind
 
-Seasonal Summary (click tabs below for seasonal plots): - Spring - avg:
-1.9 m/s, calm: 2.9%, most common: N/S, strongest: SE - Summer - avg: 1.4
-m/s, calm: 4.1%, most common: N, strongest: N - Fall - avg: 1.5 m/s,
-calm: 4.8%, most common: S, strongest: SE - Winter - avg: 1.8 m/s, calm:
-3.6%, most common: S, strongest: SE
+Seasonal Summary (click tabs below for seasonal plots):
 
-### Spring
+- Spring - avg: 1.9 m/s, calm: 2.9%, most common: N/S, strongest: SE
 
-![](../figures/wind_plots/spring.png)
+- Summer - avg: 1.4 m/s, calm: 4.1%, most common: N, strongest: N
 
-### Summer
+- Fall - avg: 1.5 m/s, calm: 4.8%, most common: S, strongest: SE
 
-![](../figures/wind_plots/summer.png)
-
-### Fall
-
-![](../figures/wind_plots/fall.png)
-
-### Winter
-
-![](../figures/wind_plots/winter.png)
-
-## 
+- Winter - avg: 1.8 m/s, calm: 3.6%, most common: S, strongest: SE
 
 ## Air and water temperatures
 
