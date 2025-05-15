@@ -15,7 +15,7 @@ If you want to pull data programmatically into R, please see the **Accessing MCR
 
 If you're new to coding but want to learn, check out our tutorials **here**
 
-If you want to request a new capability or have any questions about the MCRLdata sandbox, please reach out to Peter Regier or open a Github issue!
+If you want to request a new capability or have any questions about the MCRLdata sandbox, please open a Github issue!
 
 <img src="https://github.com/peterregier/mcrl_data_sandbox/blob/main/figures/logos/sandbox_logo_1.png" alt="Alt Text" width="300" height="300">
 
