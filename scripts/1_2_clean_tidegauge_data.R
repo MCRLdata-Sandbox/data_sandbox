@@ -105,6 +105,7 @@ p1 <- ggplot(tide_final, aes(time_pst, water_level_m_navd88)) +
 
 ggplotly(p1)
 
+write_csv(tide_final, "data/mcrl_data/250515_tidegauge_L1.csv")
 
 
 
