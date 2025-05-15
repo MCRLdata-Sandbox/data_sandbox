@@ -78,7 +78,16 @@ ggsave("figures/tidal_depth_by_month_and_tod.png", width = 10, height = 7)
 
 
 ## Make a plot that shows two weeks or a month of really nice tidal data
+start_date = as_date("2024-03-20")
 
+x <- df %>% 
+  filter(date > start_date & 
+           date < start_date + days(30)) 
+
+ggplot(x, aes(time_pst, y = water_level_m_navd88)) + 
+  geom_line(color = "blue") + 
+  labs(x = "", y = "Water Level (m NAVD88)")
+ggsave("figures/250515_tide_example.png", width = 6, height = 4)
 
 
 
