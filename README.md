@@ -17,9 +17,11 @@ The **[MCRLdata pipeline](https://mcrldata.pnnl.gov/)** hosts and streams datase
 
 💾 If you want to <ins>download MCRLdata datasets</ins> currently available on the sandbox, please visit **mcrl_data**
 
-🖥️ If you want to <ins>pull data programmatically into R</ins>, please see the **Accessing MCRLdata in R**
+🖥️ If you want to <ins>pull data programmatically into R</ins>, please see the **Accessing MCRLdata in R** tutorial
 
-📚 If you want <ins>examples of coding or data analysis</ins> relevant to the sandbox, check out our tutorials **here**
+🛠️ If you want to explore existing tools for visualizing and analyzing data, please visit **mcrl_data_tools**
+
+📚 If you want other <ins>examples of coding or data analysis</ins> relevant to the sandbox, check out our tutorials **here**
 
 🤨 If you <ins>want to request a new capability</ins> or have any <ins>questions</ins> about the MCRLdata sandbox, please open a Github issue! 
 
