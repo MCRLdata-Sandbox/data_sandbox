@@ -11,9 +11,9 @@
 
 ## Set up environment
 library(devtools)
-source_url("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/scripts/0_setup.R?token=GHSAT0AAAAAADEA236XUAQK6NU3INFJV2NC2DCYWLA")
+source("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/scripts/0_setup.R")
 
-df <- read_csv("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250515_tidegauge_L1.csv?token=GHSAT0AAAAAADEA236WWR2VPYNYTWTOBRHC2DCYXEA") %>% 
+df <- read_csv("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250515_tidegauge_L1.csv") %>% 
   assign_season()
 
 
@@ -89,9 +89,4 @@ ggplot(x, aes(time_pst, y = water_level_m_navd88)) +
   geom_line(color = "blue") + 
   labs(x = "", y = "Water Level (m NAVD88)")
 ggsave("figures/250515_tide_example.png", width = 6, height = 4)
-
-
-
-## Make some summary stats that present average HH, average LL, and seasonal ranges
-
 
