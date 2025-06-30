@@ -9,7 +9,8 @@
 # 1. Setup ---------------------------------------------------------------------
 
 ## Set up environment
-source("scripts/0_setup.R")
+library(devtools)
+source_url("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/scripts/0_setup.R?token=GHSAT0AAAAAADEA236XUAQK6NU3INFJV2NC2DCYWLA")
 p_load(openair)
 
 df <- read_csv("data/mcrl_data/MCRLdata_240501_250501_L0.csv") %>% 

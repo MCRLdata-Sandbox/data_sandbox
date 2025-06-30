@@ -11,9 +11,9 @@
 
 ## Set up environment
 library(devtools)
-source_url("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/scripts/0_setup.R?token=GHSAT0AAAAAADEA236XAP5H4PKM2WVGL3CM2BYRGDA")
+source_url("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/scripts/0_setup.R?token=GHSAT0AAAAAADEA236XUAQK6NU3INFJV2NC2DCYWLA")
 
-df <- read_csv("data/ready_to_use/L1/250515_tidegauge_L1.csv") %>% 
+df <- read_csv("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250515_tidegauge_L1.csv?token=GHSAT0AAAAAADEA236WWR2VPYNYTWTOBRHC2DCYXEA") %>% 
   assign_season()
 
 

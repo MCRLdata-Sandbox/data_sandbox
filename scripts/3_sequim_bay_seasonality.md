@@ -38,7 +38,7 @@ Wind speeds average 1.7 m/s, ranging from calm (4% of the time) to \>16
 m/s. Strongest winds are to the SE, and most common wind directions are
 S/SE followed by NW/N/NE.
 
-![](../figures/wind_plots/annual.png)
+![](%22https://github.com/MCRLdata-Sandbox/data_prep/blob/main/figures/tidal_depth_by_month_and_tod.png%22)
 
 ## Seasonal Wind
 

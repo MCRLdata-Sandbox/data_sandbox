@@ -49,7 +49,7 @@ Seasonal Summary (click tabs below for seasonal plots):
 
 ### Air Temperature
 
-Average air temperatures span ~5ºC during the winter to ~15ºC during the summer, with daily ranges (max - min) of ~5ºC during the winter to ~8ºC during the summer. Daily highs typically occur later in the spring (15:00) and summer (16:00) than fall and winter (14:00), while daily lows are consistently 4:00-5:00.
+Average air temperatures span \~5ºC during the winter to \~15ºC during the summer, with daily ranges (max - min) of \~5ºC during the winter to \~8ºC during the summer. Daily highs typically occur later in the spring (15:00) and summer (16:00) than fall and winter (14:00), while daily lows are consistently 4:00-5:00.
 
 ![](../figures/air_temperature.png)
 
