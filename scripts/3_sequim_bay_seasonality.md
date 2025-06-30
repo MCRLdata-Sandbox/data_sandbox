@@ -1,7 +1,7 @@
 Sequim Bay seasonal summary
 ================
 PR
-2025-05-15
+2025-06-30
 
 ## Purpose
 
@@ -38,7 +38,7 @@ Wind speeds average 1.7 m/s, ranging from calm (4% of the time) to \>16
 m/s. Strongest winds are to the SE, and most common wind directions are
 S/SE followed by NW/N/NE.
 
-![](%22https://github.com/MCRLdata-Sandbox/data_prep/blob/main/figures/tidal_depth_by_month_and_tod.png%22)
+![](../figures/wind_plots/annual.png)
 
 ## Seasonal Wind
 
@@ -54,17 +54,17 @@ Seasonal Summary (click tabs below for seasonal plots):
 
 ## Air and water temperatures
 
-### Air Temperature
-
 Average air temperatures span ~5ºC during the winter to ~15ºC during the
 summer, with daily ranges (max - min) of ~5ºC during the winter to ~8ºC
 during the summer. Daily highs typically occur later in the spring
 (15:00) and summer (16:00) than fall and winter (14:00), while daily
 lows are consistently 4:00-5:00.
 
-![](../figures/air_temperature.png)
+Water temperatures follow a similar pattern as air temperatures, and are
+generally warmer than air temperatures during the summer, and colder
+than air temperatures during the winter.
 
-**more coming soon once I clean water temp**
+![](../figures/250630_temps_by_doy.png)
 
 ## Photosyntheticially Active Radiation
 
