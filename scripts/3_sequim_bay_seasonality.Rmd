@@ -45,7 +45,6 @@ Seasonal Summary (click tabs below for seasonal plots):
 
 -   Winter - avg: 1.8 m/s, calm: 3.6%, most common: S, strongest: SE
 
-
 ## Air and water temperatures
 
 Average air temperatures span \~5ºC during the winter to \~15ºC during the summer, with daily ranges (max - min) of \~5ºC during the winter to \~8ºC during the summer. Daily highs typically occur later in the spring (15:00) and summer (16:00) than fall and winter (14:00), while daily lows are consistently 4:00-5:00.
@@ -53,16 +52,14 @@ Average air temperatures span \~5ºC during the winter to \~15ºC during the sum
 Water temperatures follow a similar pattern as air temperatures, and are generally warmer than air temperatures during the summer, and colder than air temperatures during the winter.
 
 ![](../figures/250630_temps_by_doy.png)
+
 ## Salinity
 
 ![](../figures/250630_salinity.png)
 
-
-
 ## Photosyntheticially Active Radiation
 
 **coming soon**
-
 
 ## Chlorophyll and Dissolved Oxygen
 
