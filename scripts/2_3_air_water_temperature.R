@@ -90,3 +90,19 @@ sal_plot <- plot_doy(salinity_psu_clean_min,
                      salinity_psu_clean_max, 
                      "Salinity (PPT)")
 
+sal_v_temp <- ggplot(doy_summaries, aes(airtemp_avg_deg_c_mean, salinity_psu_clean_mean, color = doy)) + 
+  geom_point(size = 2, alpha = 0.7) + 
+  geom_point() + 
+  scale_color_viridis_c() + 
+  labs(x = "Mean Air Temp (C)", 
+       y = "Mean Salinity (PPT)", 
+       color = "Day of \n Year")
+
+plot_grid(sal_plot, sal_v_temp, 
+          rel_widths = c(1, 1.5),
+          nrow = 1)
+ggsave("figures/250630_salinity.png", width = 7, height = 3)
+
+
+
+

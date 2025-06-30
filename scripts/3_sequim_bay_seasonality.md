@@ -64,15 +64,13 @@ Water temperatures follow a similar pattern as air temperatures, and are
 generally warmer than air temperatures during the summer, and colder
 than air temperatures during the winter.
 
-![](../figures/250630_temps_by_doy.png)
+![](../figures/250630_temps_by_doy.png) \## Salinity
+
+![](../figures/250630_salinity.png)
 
 ## Photosyntheticially Active Radiation
 
-**coming soon once I clean em**
-
-## Salinity
-
-**coming soon once I clean em**
+**coming soon**
 
 ## Chlorophyll and Dissolved Oxygen
 
