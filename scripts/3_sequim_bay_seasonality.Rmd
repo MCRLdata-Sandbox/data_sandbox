@@ -1,7 +1,7 @@
 ---
 title: "Sequim Bay seasonal summary"
 author: "PR"
-date: "2025-06-30"
+date: "2025-05-15"
 output: rmarkdown::github_document
 ---
 
@@ -47,19 +47,21 @@ Seasonal Summary (click tabs below for seasonal plots):
 
 ## Air and water temperatures
 
+### Air Temperature
+
 Average air temperatures span \~5ºC during the winter to \~15ºC during the summer, with daily ranges (max - min) of \~5ºC during the winter to \~8ºC during the summer. Daily highs typically occur later in the spring (15:00) and summer (16:00) than fall and winter (14:00), while daily lows are consistently 4:00-5:00.
 
-Water temperatures follow a similar pattern as air temperatures, and are generally warmer than air temperatures during the summer, and colder than air temperatures during the winter.
+![](../figures/air_temperature.png)
 
-![](../figures/250630_temps_by_doy.png)
-
-## Salinity
-
-![](../figures/250630_salinity.png)
+**more coming soon once I clean water temp**
 
 ## Photosyntheticially Active Radiation
 
-**coming soon**
+**coming soon once I clean em**
+
+## Salinity
+
+**coming soon once I clean em**
 
 ## Chlorophyll and Dissolved Oxygen
 
