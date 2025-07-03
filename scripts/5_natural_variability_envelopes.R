@@ -33,4 +33,15 @@ ctd %>%
   scale_fill_viridis_d() + 
   labs(x = "", y = "Salinity")
 
+ctd %>% 
+  assign_season() %>% 
+  mutate(doy = yday(time_pst)) %>% 
+  group_by(doy) %>% 
+  summarize(mean = mean(temp_deg_c, na.rm = T), 
+            sd = sd(temp_deg_c, na.rm = T)) %>% 
+  ggplot(aes(x = doy)) + 
+  geom_ribbon(aes(ymin = mean - sd, ymax = mean + sd), alpha = 0.2) + 
+  geom_smooth(aes(y = mean), se = F) + 
+  scale_fill_viridis_d() + 
+  labs(x = "", y = "Salinity")
 
