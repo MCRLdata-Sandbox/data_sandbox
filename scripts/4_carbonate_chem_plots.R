@@ -48,3 +48,38 @@ df %>%
 ggsave("figures/250702_dic_vs_ta.png", width = 5, height = 4)
 
 
+## Estimate salinity!
+
+ctd <- read_csv("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250630_ctd_water_temp_salinity_L1.csv")
+
+ta_estimates <- ctd %>% 
+  mutate(est_ta = b + salinity_psu_clean*m) %>% 
+  mutate(doy = yday(time_pst)) %>% 
+  group_by(doy) %>% 
+  summarize(across(all_of(c("est_ta")), 
+                   list(max = max, mean = mean, min = min), na.rm = TRUE)) %>% 
+  complete(doy = 1:366) 
+
+p1 <- ctd %>% 
+  assign_season() %>% 
+  mutate(est_ta = b + salinity_psu_clean*m) %>% 
+  ggplot(aes(season, est_ta, fill = season)) + 
+  geom_boxplot(alpha = 0.5, show.legend = F) + 
+  scale_fill_viridis_d()
+
+p2 <- ggplot(ta_estimates %>% drop_na(), aes(doy)) + 
+  geom_ribbon(aes(ymin = est_ta_min, 
+                  ymax = est_ta_max), 
+              alpha = 0.4, fill = "red", na.rm = T) + 
+  geom_smooth(aes(y = est_ta_mean), lwd = 1, color = "black") + 
+  labs(x = "Day of Year", y = "Estimated TA (umol/kg)")
+
+plot_grid(p1, p2)
+ggsave("figures/250714_est_ta.png", width = 8, height = 4)
+
+
+
+
+
+
+
