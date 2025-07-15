@@ -28,7 +28,7 @@ df %>%
   geom_smooth(method = "lm", se = F, color = "black", linetype = "dashed") + 
   scale_color_viridis_d() + 
   #scale_alpha_continuous(range = c(0.4, 1)) + 
-  labs(x = "Salinity (PSU)", y = "Total alkalinity (umol/kg)", 
+  labs(x = "Salinity (PSU)", y = "Total alkalinity (µmol/kg)", 
        color = "Tide", shape = "Location", 
        title = "1 value removed (TA = 2301)") + 
   annotate(geom = "text", x = 31, y = 2190, label = paste0("R2=", round(r2, 2))) + 
@@ -36,14 +36,29 @@ df %>%
 ggsave("figures/250702_sal_vs_ta.png", width = 5, height = 4)
 
 
+dic_r2 = summary(lm(dic_umol_kg_20_c~salinity_practical_salinity_scale, data = df))[[9]]
+
+df %>% 
+  mutate(month = month(date)) %>% 
+  ggplot(aes(salinity_practical_salinity_scale, dic_umol_kg_20_c)) + 
+  geom_point(color = "gray", size = 3, aes(shape = station_name)) + 
+  geom_point(size = 2.2, aes(color = tidal_name, shape = station_name)) + 
+  scale_color_viridis_d() + 
+  geom_smooth(method = "lm", se = F, color = "black", linetype = "dashed") + 
+  annotate(geom = "text", x = 31, y = 2120, label = paste0("R2=", round(dic_r2, 2))) + 
+  labs(x = "Salinity (PSU)", 
+       y = "Dissolved inorganic carbon (µmol/kg)", 
+       color = "Tide", shape = "Location")
+ggsave("figures/250715_sal_vs_dic.png", width = 5, height = 4)
+
 df %>% 
   mutate(month = month(date)) %>% 
   ggplot(aes(dic_umol_kg_20_c, ta_umol_kg_20)) + 
   geom_point(color = "gray", size = 3, aes(shape = station_name)) + 
   geom_point(size = 2.2, aes(color = tidal_name, shape = station_name)) + 
   scale_color_viridis_d() + 
-  labs(x = "Dissolved inorganic carbon (umol/kg)", 
-       y = "Total alkalinity (umol/kg)", 
+  labs(x = "Dissolved inorganic carbon (µmol/kg)", 
+       y = "Total alkalinity (µmol/kg)", 
        color = "Tide", shape = "Location")
 ggsave("figures/250702_dic_vs_ta.png", width = 5, height = 4)
 
@@ -65,17 +80,22 @@ p1 <- ctd %>%
   mutate(est_ta = b + salinity_psu_clean*m) %>% 
   ggplot(aes(season, est_ta, fill = season)) + 
   geom_boxplot(alpha = 0.5, show.legend = F) + 
-  scale_fill_viridis_d()
+  scale_fill_viridis_d() + 
+  labs(x = "Season", y = "Estimated TA (µmol/kg)")
 
 p2 <- ggplot(ta_estimates %>% drop_na(), aes(doy)) + 
   geom_ribbon(aes(ymin = est_ta_min, 
                   ymax = est_ta_max), 
               alpha = 0.4, fill = "red", na.rm = T) + 
   geom_smooth(aes(y = est_ta_mean), lwd = 1, color = "black") + 
-  labs(x = "Day of Year", y = "Estimated TA (umol/kg)")
+  labs(x = "Day of Year", y = "Estimated TA (µmol/kg)")
 
 plot_grid(p1, p2)
 ggsave("figures/250714_est_ta.png", width = 8, height = 4)
+
+
+
+
 
 
 

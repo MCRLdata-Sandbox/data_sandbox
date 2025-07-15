@@ -9,7 +9,7 @@ as key parameters. These data originated from Jessica Cross’s LDRD work
 to capture natural variability envelopes of carbonate chemistry within
 Sequim Bay, and provide valuable baseline information.
 
-## TA vs salinity
+## TA as a function of salinity
 
 TA generally positively correlates with salinity in coastal zones where
 freshwater and saltwater mix, like Sequim Bay. Across available samples,
@@ -21,7 +21,13 @@ variation, it provides a handy first estimate for TA, which requires
 laboratory analysis, via salinity, which is readily measured in-situ at
 high resolution
 
-![](../figures/250702_sal_vs_ta.png)
+![](../figures/250702_sal_vs_ta.png) \## Salinity vs DIC
+
+Contrasting TA, DIC is not expected to correlate strongly salinity, and
+results support this expectation. Although there is an apparent increase
+in DIC with increasing salinity, this relationship is weak (R2=0.07).
+
+![](../figures/250715_sal_vs_dic.png)
 
 ## Estimated seasonality of TA
 
