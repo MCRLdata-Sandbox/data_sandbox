@@ -1,0 +1,128 @@
+---
+title: "Sequim Bay natural variability envelopes"
+author: "PR"
+date: "2025-07-18"
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, 
+                      message = F, 
+                      warning = F)
+```
+
+```{r}
+
+## Set up environment
+library(devtools)
+source("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/scripts/0_setup.R")
+
+
+```
+
+
+```{r}
+
+read_csv_w_season <- function(url){
+  read_csv(url) %>% 
+    assign_season() %>% 
+    mutate(doy = yday(time_pst))
+}
+
+ctd <- read_csv_w_season("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250630_ctd_water_temp_salinity_L1.csv")
+
+
+```
+
+## Water temperature
+```{r}
+
+plot_nv_boxplot <- function(data, var, y_lab){
+  data %>% 
+    ggplot(aes(month, {{var}}, fill = season)) + 
+  geom_boxplot(show.legend = F, alpha = 0.5) + 
+  scale_fill_viridis_d() + 
+  labs(x = "", y = y_lab)
+}
+
+#plot_natural_variability(ctd, temp_deg_c, "Water temperature")
+
+plot_nv_doy <- function(data, var, y_lab){
+  
+  ytd <- data %>% 
+  filter(time_pst >= "2025-01-01") %>% 
+  drop_na({{var}}) %>% 
+    ungroup() %>% 
+  group_by(doy) %>% 
+  summarize(median = median({{var}}, na.rm = T))
+
+summary <- data %>% 
+  ungroup() %>% 
+  group_by(doy) %>% 
+  summarize(median = median({{var}}, na.rm = T), 
+            sd = sd({{var}}, na.rm = T)) %>% 
+  mutate(lower_sd = ifelse(median - sd > 0, median - sd, 0), 
+         upper_sd = ifelse(median + sd > 0, median + sd, 0))
+
+ggplot() + 
+  geom_ribbon(data = summary, aes(x = doy, ymin = lower_sd, ymax = upper_sd), color = "gray", alpha = 0.3) + 
+  geom_path(data = summary, aes(x = doy, median), color = "blue", lwd = 1, alpha = 0.8) + 
+  geom_path(data = ytd, aes(x = doy, median), color= "black", alpha = 1) + 
+  geom_point(data = ytd, aes(x = doy, median), color= "black", alpha = 0.2) + 
+  labs(x = "Day of year", y = y_lab, title = "Blue = median, Gray = median +/- 1 sd, Black = 2025 data")
+}
+
+plot_nv_doy(ctd, temp_deg_c, "Water temperature (C)")
+
+```
+
+## Salinity
+
+```{r}
+
+plot_nv_doy(ctd, salinity_psu_clean, "Salinity (PSU)")
+
+```
+
+## Windspeed (avg)
+
+```{r}
+
+wind <- read_csv_w_season("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250630_windspeed_L1.csv")
+
+plot_nv_doy(wind, windspeed_avg_m_s, "Windspeed (avg, m/s)")
+
+```
+
+## Wind direction
+
+Note that >360 degrees is impossible, reflects large standard deviations, and should not be interpreted.
+
+```{r}
+plot_nv_doy(wind, winddir_deg_from, "Wind direction (degrees)")
+```
+
+## Tidal water levels
+
+```{r}
+
+tide <- read_csv_w_season("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250515_tidegauge_L1.csv")
+
+plot_nv_doy(tide, water_level_m_navd88, "Water level (m NAVD88)")
+
+```
+
+```{r}
+
+adcp <- read_csv_w_season("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250703_adcp_velocity_L1.csv")
+
+plot_nv_doy(adcp, max_velocity_m_s, "Velocity")
+
+```
+
+
+
+
+
+
+
