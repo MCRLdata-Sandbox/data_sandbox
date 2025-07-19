@@ -6,5 +6,9 @@ The sandbox includes tools for visualizing and analyzing MCRLdata datasets. R Sc
 
 ## Current sandbox highlights
 
-⛴️ If you want a <ins>simple summary of seasonal Sequim Bay conditions</ins> off the dock, check out the **[Sequim Bay seasonal summary](https://github.com/peterregier/mcrl_data_sandbox/blob/main/scripts/3_sequim_bay_seasonality.md)**
+⛴️ If you want to know how conditions in Sequim Bay varies throughout the year, check out the **[natural variability plots]()**
+
+⛴️ If you want a <ins>simple summary of seasonal Sequim Bay conditions</ins> off the dock, check out the **[Sequim Bay seasonal summary](https://github.com/MCRLdata-Sandbox/data_sandbox/blob/main/scripts/3_sequim_bay_seasonality.md)**
+
+⛴️ If you're interested in <ins>carbonate chemistry<ins>, check out **[initial TA and DIC plots](https://github.com/MCRLdata-Sandbox/data_sandbox/blob/main/scripts/3_carbonate_chemistry.md)**
 
