@@ -112,6 +112,8 @@ plot_nv_doy(tide, water_level_m_navd88, "Water level (m NAVD88)")
 
 ```
 
+## ADCP - tidal velocities
+
 ```{r}
 
 adcp <- read_csv_w_season("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250703_adcp_velocity_L1.csv")

@@ -16,7 +16,8 @@ source("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/
 
 air_temp <- read_csv("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250630_air_temp_L1.csv")
 
-ctd <- read_csv("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250630_ctd_water_temp_salinity_L1.csv")
+ctd <- read_csv("https://raw.githubusercontent.com/MCRLdata-Sandbox/data_prep/refs/heads/main/data/outputs/L1/250815_ctd_water_temp_salinity_L1.csv")
+
 
 
 

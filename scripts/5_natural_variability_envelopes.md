@@ -26,4 +26,6 @@ deviations, and should not be interpreted.
 
 ![](5_natural_variability_envelopes_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
+## ADCP - tidal velocities
+
 ![](5_natural_variability_envelopes_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
