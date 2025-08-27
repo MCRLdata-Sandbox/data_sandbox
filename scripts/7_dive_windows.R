@@ -141,7 +141,7 @@ p3 <- ggplot(y, aes(time_pst, water_level_m_navd88)) +
   labs(x = "", y = "Water level \n (m NAVD88)", color = "Velocity \n (max, m/s)")
 
 plot_grid(p2, p3, ncol = 1)
-ggsave("250821_")
+ggsave("figures/250821_dive_window_ex.png", width = 10, height = 6)
 
 # 1. find low tide between two high tides
 # 2. check that velocities are low
